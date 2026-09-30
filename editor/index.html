@@ -14,7 +14,21 @@ document.getElementById("zipBtn").onclick = async () => {
   const zip = new JSZip();
 
   // Add files
-  zip.file("project.json", "Hello Michael!");
+  zip.file("project.json", "{
+  "id": "michael-ranch",
+  "engine": "RanchEngine",
+  "version": "1.0.0",
+  "entry": "main.js",
+  "files": {
+    "scripts": ["resolutions.js"],
+    "assets": ["hello.txt", "torch.gif"],
+    "data": ["ranch.json"]
+  },
+  "config": {
+    "fullscreen": false,
+    "resolution": [1280, 720]
+  }
+}");
 
   // Add folder + file
   const assets = zip.folder("assets");
